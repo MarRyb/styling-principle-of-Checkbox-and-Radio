@@ -1,0 +1,57 @@
+input {
+  &[type="checkbox"], &[type="radio"] {
+    display: none;
+  }
+
+  &[type="checkbox"] + label, &[type="radio"] + label {
+    font: 18px bold;
+    color: #444;
+    cursor: pointer;
+  }
+
+  &[type="checkbox"] + label::before, &[type="radio"] + label::before {
+    content: "";
+    display: inline-block;
+    height: 18px;
+    width: 18px;
+    margin: 0 5px 0 0;
+    background: red;
+    background-repeat: no-repeat;
+  }
+
+  &[type="checkbox"] + label::before {
+    background-position: -38px -260px;
+  }
+
+  &[type="radio"] + label::before {
+    background-position: 0px -279px;
+  }
+
+  &[type="checkbox"]:checked + label::before {
+    background-position: -114px -260px;
+  }
+
+  &[type="radio"]:checked + label::before {
+    background-position: -108px -279px;
+  }
+
+  &[type="checkbox"] {
+    &:disabled + label::before {
+      background-position: -152px -260px;
+    }
+
+    &:checked:disabled + label::before {
+      background-position: -171px -260px;
+    }
+  }
+
+  &[type="radio"] {
+    &:disabled + label::before {
+      background-position: -144px -279px;
+    }
+
+    &:checked:disabled + label::before {
+      background-position: -162px -279px;
+    }
+  }
+}
